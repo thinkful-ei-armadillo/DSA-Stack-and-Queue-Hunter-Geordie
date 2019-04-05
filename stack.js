@@ -177,3 +177,31 @@ function codeCheck(argument) {
 }
 
 // console.log(codeCheck(argument));
+
+
+function sortStack(stack) {
+  let resultStack = new Stack();
+
+  while (stack.top) {
+    var temp = stack.pop();
+
+    while (resultStack.top && resultStack.top.data > temp) {
+      stack.push(resultStack.pop());
+    }
+    resultStack.push(temp);
+  }
+
+  return resultStack;
+}
+
+const sortTest = new Stack();
+sortTest.push(5);
+sortTest.push(10);
+sortTest.push(6);
+sortTest.push(3);
+sortTest.push(7);
+sortTest.push(1);
+
+// console.log(display(sortTest));
+// console.log(display(sortStack(sortTest)));
+
